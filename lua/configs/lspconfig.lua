@@ -34,6 +34,42 @@ vim.lsp.enable "kmonad-vim"
 
 vim.lsp.enable "gopls"
 
+vim.lsp.config("html", {
+  cmd = { "vscode-html-language-server", "--stdio" },
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true,
+    },
+    provideFormatter = true,
+  },
+  root_markers = { "package.json", ".git" },
+})
+
+vim.lsp.enable "html"
+
+vim.lsp.config("cssls", {
+  cmd = { "vscode-css-language-server", "--stdio" },
+  filetypes = { "css", "scss", "less" },
+  init_options = {
+    provideFormatter = true,
+  },
+  settings = {
+    css = {
+      validate = true,
+    },
+    less = {
+      validate = true,
+    },
+    scss = {
+      validate = true,
+    },
+  },
+})
+
+vim.lsp.enable "cssls"
+
 vim.lsp.config("tsserver", {
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = { "javascript", "typescript" },
