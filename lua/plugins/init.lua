@@ -136,6 +136,8 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    build = ":TSUpdate",
     opts = {
       ensure_installed = {
         "vim",
@@ -145,8 +147,8 @@ return {
         "rust",
         "html",
         "css",
-        "js",
-        "ts",
+        "javascript",
+        "typescript",
       },
     },
   },
