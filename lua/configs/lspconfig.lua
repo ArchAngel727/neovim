@@ -1,5 +1,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
+vim.lsp.enable "rustaceanvim"
+
 vim.lsp.config("basedpyright", require("configs.basedpyright").config)
 
 vim.lsp.enable "basedpyright"

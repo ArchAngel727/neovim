@@ -42,7 +42,7 @@ return {
     filetypes = { "rust" },
     ft = { "rust" },
     lazy = false,
-    version = "^6",
+    version = "^9",
   },
 
   {
