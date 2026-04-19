@@ -194,4 +194,14 @@ return {
       }
     end,
   },
+
+  {
+    "aznhe21/actions-preview.nvim",
+    config = function()
+      require("actions-preview").setup {
+        diff = { ctxlen = 3 },
+        backend = { "telescope", "nui" }, -- uses Telescope for fuzzy preview
+      }
+    end,
+  },
 }

@@ -6,9 +6,9 @@ vim.g.rustaceanvim = function()
       vim.cmd.RustLsp { "hover", "actions" }
     end, vim.tbl_extend("force", opts, { desc = "Rust hover actions" }))
 
-    vim.keymap.set("n", "<leader>ca", function()
-      vim.cmd.RustLsp { "codeAction" }
-    end, vim.tbl_extend("force", opts, { desc = "Rust code actions" }))
+    -- vim.keymap.set("n", "<leader>ca", function()
+    --   vim.cmd.RustLsp { "codeAction" }
+    -- end, vim.tbl_extend("force", opts, { desc = "Rust code actions" }))
 
     vim.keymap.set("n", "<leader>cr", function()
       vim.cmd.RustLsp { "runnables" }
