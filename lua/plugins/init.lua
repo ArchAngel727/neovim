@@ -93,6 +93,7 @@ return {
         "css",
         "javascript",
         "typescript",
+        "hyprland",
       },
     },
   },
