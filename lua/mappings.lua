@@ -12,12 +12,12 @@ map("n", "<leader>crt", "<cmd> CargoRunTerm <cr>", { desc = "Cargo Run Term" })
 map("n", "<leader>cb", "<cmd> CargoBuild <cr>", { desc = " Cargo Build" })
 map("n", "<leader>ct", "<cmd> CargoTest <cr>", { desc = "Cargo Test" })
 
--- map("n", "ca", function()
---   vim.lsp.buf.code_action()
--- end, { desc = "LSP Code Action" })
-
 map("n", "<leader>ca", function()
   require("actions-preview").code_actions()
 end, {
   desc = "Code Actions (Preview)",
 })
+
+map("n", "<leader>ih", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })

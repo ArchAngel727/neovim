@@ -39,26 +39,15 @@ return {
 
   {
     "mrcjkb/rustaceanvim",
-    filetypes = { "rust" },
     ft = { "rust" },
-    lazy = false,
     version = "^9",
   },
 
   {
     "saecki/crates.nvim",
-    ft = { "toml" },
     event = { "BufRead Cargo.toml" },
     config = function()
       require("crates").setup()
-    end,
-  },
-
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function()
-      vim.g.rustfmt_autosave = 1
     end,
   },
 
@@ -67,15 +56,7 @@ return {
   },
 
   {
-    "DetachHead/basedpyright",
-  },
-
-  {
     "kmonad/kmonad-vim",
-  },
-
-  {
-    "MunifTanjim/prettier.nvim",
   },
 
   {
@@ -104,12 +85,6 @@ return {
 
   {
     require "configs.trouble",
-  },
-
-  {
-    "tombi-toml/tombi",
-    filetypes = { "toml" },
-    root_markers = { "tombi.toml", "pyproject.toml", ".git" },
   },
 
   {
