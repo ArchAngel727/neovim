@@ -115,4 +115,16 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
+
+  {
+    require "configs.nvim-dap",
+  },
+
+  {
+    require "configs.telescope-ui-select",
+  },
+
+  {
+    require "configs.snacks",
+  },
 }

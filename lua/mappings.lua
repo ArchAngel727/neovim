@@ -21,3 +21,11 @@ end, {
 map("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hints" })
+
+map("n", "<leader>nh", function()
+  Snacks.notifier.show_history()
+end, { desc = "Notification history" })
+
+map("n", "<leader>nd", function()
+  Snacks.notifier.hide()
+end, { desc = "Dismiss notifications" })
