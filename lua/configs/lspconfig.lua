@@ -12,7 +12,7 @@ vim.lsp.enable {
   "kmonad-vim",
   "tombi",
   "rustaceanvim",
-  "tsserver",
+  "typescript-language-server",
 }
 
 vim.lsp.inlay_hint.enable(true)
