@@ -13,6 +13,7 @@ vim.lsp.enable {
   "tombi",
   "rustaceanvim",
   "typescript-language-server",
+  "jsonls",
 }
 
 vim.lsp.inlay_hint.enable(true)
