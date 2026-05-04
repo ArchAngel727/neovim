@@ -14,6 +14,7 @@ vim.lsp.enable {
   "rustaceanvim",
   "typescript-language-server",
   "jsonls",
+  "angularls",
 }
 
 vim.lsp.inlay_hint.enable(true)
