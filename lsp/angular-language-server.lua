@@ -22,4 +22,20 @@ return {
   },
   filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
   root_markers = { "angular.json", "nx.json", "project.json" },
+  commands = {
+    ["angular.applyCompletionCodeAction"] = function(command, ctx)
+      local client = vim.lsp.get_client_by_id(ctx.client_id)
+      local offset_encoding = client and client.offset_encoding or "utf-16"
+
+      for _, arg in ipairs(command.arguments or {}) do
+        if type(arg) == "table" then
+          for _, edit in ipairs(arg) do
+            if edit.edit then
+              vim.lsp.util.apply_workspace_edit(edit.edit, offset_encoding)
+            end
+          end
+        end
+      end
+    end,
+  },
 }
