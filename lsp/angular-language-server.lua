@@ -21,7 +21,12 @@ return {
     probe_dir,
   },
   filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "htmlangular" },
-  root_markers = { "angular.json", "nx.json", "project.json" },
+  root_dir = function(bufnr, on_dir)
+    local root = vim.fs.root(bufnr, { "angular.json", "nx.json", "project.json" })
+    if root then
+      on_dir(root)
+    end
+  end,
   commands = {
     ["angular.applyCompletionCodeAction"] = function(command, ctx)
       local client = vim.lsp.get_client_by_id(ctx.client_id)
