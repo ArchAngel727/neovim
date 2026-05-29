@@ -15,6 +15,7 @@ vim.lsp.enable {
   "typescript-language-server",
   "jsonls",
   "angularls",
+  "svelte",
 }
 
 vim.lsp.inlay_hint.enable(true)
