@@ -74,7 +74,7 @@ return {
         "css",
         "javascript",
         "typescript",
-        "hyprland",
+        "markdown",
       },
     },
   },
