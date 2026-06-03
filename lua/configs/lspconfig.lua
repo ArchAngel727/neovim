@@ -14,7 +14,6 @@ vim.lsp.enable {
   "rustaceanvim",
   "typescript-language-server",
   "jsonls",
-  "angularls",
   "svelte",
 }
 
