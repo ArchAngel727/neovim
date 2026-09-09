@@ -13,3 +13,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+vim.filetype.add {
+  extension = { tera = "html" },
+  pattern = { [".*%.html%.tera"] = "html" },
+}
