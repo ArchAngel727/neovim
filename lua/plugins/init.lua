@@ -133,4 +133,9 @@ return {
     event = "BufReadPost",
     opts = {},
   },
+  {
+    "seblyng/roslyn.nvim",
+    ft = { "cs", "razor" },
+    opts = {},
+  },
 }
