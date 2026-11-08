@@ -138,4 +138,8 @@ return {
     ft = { "cs", "razor" },
     opts = {},
   },
+  {
+    "hiphish/rainbow-delimiters.nvim",
+    lazy = false,
+  },
 }

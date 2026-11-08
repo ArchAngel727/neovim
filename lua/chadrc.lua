@@ -8,10 +8,15 @@ local M = {}
 M.base46 = {
   theme = "catppuccin",
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+  hl_add = {
+    RainbowDelimiterRed = { fg = "red" },
+    RainbowDelimiterYellow = { fg = "yellow" },
+    RainbowDelimiterBlue = { fg = "blue" },
+    RainbowDelimiterOrange = { fg = "orange" },
+    RainbowDelimiterGreen = { fg = "green" },
+    RainbowDelimiterViolet = { fg = "purple" },
+    RainbowDelimiterCyan = { fg = "cyan" },
+  },
 }
 
 -- M.nvdash = { load_on_startup = true }
