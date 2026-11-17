@@ -25,11 +25,11 @@ local function is_real_file(buf)
   return vim.bo[buf].buftype == "" and vim.api.nvim_buf_get_name(buf) ~= ""
 end
 
-vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
+vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost" }, {
   group = view_group,
   callback = function(args)
     if is_real_file(args.buf) then
-      vim.cmd "silten! mkview"
+      vim.cmd "silent! mkview"
     end
   end,
 })
