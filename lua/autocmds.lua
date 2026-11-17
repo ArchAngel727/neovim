@@ -18,3 +18,27 @@ vim.filetype.add {
   extension = { tera = "html" },
   pattern = { [".*%.html%.tera"] = "html" },
 }
+
+local view_group = vim.api.nvim_create_augroup("AutoView", { clear = true })
+
+local function is_real_file(buf)
+  return vim.bo[buf].buftype == "" and vim.api.nvim_buf_get_name(buf) ~= ""
+end
+
+vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
+  group = view_group,
+  callback = function(args)
+    if is_real_file(args.buf) then
+      vim.cmd "silten! mkview"
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = view_group,
+  callback = function(args)
+    if is_real_file(args.buf) then
+      vim.cmd "silent! loadview"
+    end
+  end,
+})
