@@ -68,6 +68,13 @@ return {
   dependencies = {
     { "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" } },
     "theHamsta/nvim-dap-virtual-text",
+    {
+      "nicholasmata/nvim-dap-cs",
+      dependencies = { "mfussenegger/nvim-dap" },
+      config = function()
+        require("dap-cs").setup()
+      end,
+    },
   },
   config = function()
     require "configs.dap"

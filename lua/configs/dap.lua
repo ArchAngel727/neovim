@@ -40,6 +40,7 @@ local cpp_config = {
       return vars
     end,
   },
+
   {
     name = "Attach to PID",
     type = "lldb",
@@ -49,9 +50,43 @@ local cpp_config = {
   },
 }
 
+local csharp_config = {
+  {
+    name = "Launch .NET DLL",
+    type = "coreclr",
+    request = "launch",
+
+    program = function()
+      return vim.fn.input("Path to .NET DLL: ", vim.fn.getcwd() .. "/bin/Debug/", "file")
+    end,
+
+    args = function()
+      local input = vim.fn.input "Args: "
+      return vim.split(input, " ", { trimempty = true })
+    end,
+
+    cwd = "${workspaceFolder}",
+    stopAtEntry = false,
+
+    -- Inherit the current environment
+    env = function()
+      return vim.fn.environ()
+    end,
+  },
+
+  {
+    name = "Attach to PID",
+    type = "coreclr",
+    request = "attach",
+
+    processId = require("dap.utils").pick_process,
+  },
+}
+
 dap.configurations.cpp = cpp_config
-dap.configurations.c = cpp_config
-dap.configurations.rust = cpp_config
+dap.configurations.cs = csharp_config
+-- dap.configurations.c
+-- dap.configurations.rust
 
 -- UI
 dapui.setup()
