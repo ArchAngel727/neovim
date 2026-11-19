@@ -42,3 +42,17 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufAdd", "BufEnter", "BufWinEnter" }, {
+  callback = function(args)
+    local name = vim.api.nvim_buf_get_name(args.buf)
+    if name:match "diffpanel_%d+$" or name:match "undotree_%d+$" then
+      vim.defer_fn(function()
+        vim.t.bufs = vim.tbl_filter(function(b)
+          return b ~= args.buf
+        end, vim.t.bufs or {})
+        vim.cmd "redrawtabline"
+      end, 50)
+    end
+  end,
+})

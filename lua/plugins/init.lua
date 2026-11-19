@@ -51,9 +51,9 @@ return {
     end,
   },
 
-  {
-    require "configs.cargo",
-  },
+  -- {
+  --   require "configs.cargo",
+  -- },
 
   {
     "kmonad/kmonad-vim",
@@ -127,19 +127,34 @@ return {
   {
     require "configs.snacks",
   },
+
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "BufReadPost",
     opts = {},
   },
+
   {
     "seblyng/roslyn.nvim",
     ft = { "cs", "razor" },
     opts = {},
   },
+
   {
     "hiphish/rainbow-delimiters.nvim",
     lazy = false,
+  },
+
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
+    keys = {
+      {
+        "<leader>u",
+        "<cmd>UndotreeToggle<cr>",
+        desc = "open undo",
+      },
+    },
   },
 }
