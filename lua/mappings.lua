@@ -24,6 +24,7 @@ map("n", "N", "Nzzzv")
 
 map("n", "Q", "<nop>")
 
+-- NOTE: Paste without deleting copy buffer
 map("x", "<leader>p", '"_dP')
 
 -- NOTE: Code actions menu
